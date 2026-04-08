@@ -33,8 +33,8 @@ jobs:
             --onefile `
             --name ReportMyTeam `
             --console `
-            --hidden-import report_my_team `
-            src/report_my_team/__main__.py
+            --collect-all report_my_team `
+            launcher.py
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
