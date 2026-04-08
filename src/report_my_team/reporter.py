@@ -33,7 +33,9 @@ async def handle_end_game(client: LcuClient, state: AppState) -> None:
     for team in stats.teams:
         for player in team.players:
             if player.botPlayer:
-                logger.info("Skipping %s (%s) — bot player", player.riotIdGameName or player.championName, player.championName)
+                logger.info(
+                    "Skipping %s (%s) — bot player", player.riotIdGameName or player.championName, player.championName
+                )
             else:
                 report_tasks.append(_report_player(client, state, stats.gameId, player))
     await asyncio.gather(*report_tasks, return_exceptions=True)
