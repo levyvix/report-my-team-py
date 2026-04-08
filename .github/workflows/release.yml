@@ -25,10 +25,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: uv sync
-
-      - name: Install PyInstaller
-        run: uv add --dev pyinstaller
+        run: uv sync --all-groups
 
       - name: Build executable
         run: |
@@ -36,6 +33,7 @@ jobs:
             --onefile `
             --name ReportMyTeam `
             --console `
+            --hidden-import report_my_team `
             src/report_my_team/__main__.py
 
       - name: Upload artifact
