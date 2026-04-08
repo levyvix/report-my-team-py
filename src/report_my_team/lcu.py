@@ -10,7 +10,7 @@ import psutil
 
 logger = logging.getLogger(__name__)
 
-PROCESS_NAME = "LeagueClientUx"
+PROCESS_NAME = "LeagueClientUx.exe"
 PORT_PATTERN = re.compile(r'--app-port="?(\d+)"?')
 TOKEN_PATTERN = re.compile(r"--remoting-auth-token=([a-zA-Z0-9_-]+)")
 

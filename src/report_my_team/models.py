@@ -24,8 +24,14 @@ class Friend(BaseModel):
 class Player(BaseModel):
     summonerId: int
     puuid: str
-    summonerName: str
+    riotIdGameName: str = ""
     championName: str | None = None
+    botPlayer: bool = False
+
+
+class Team(BaseModel):
+    teamId: int
+    players: list[Player]
 
 
 class LocalPlayer(BaseModel):
@@ -35,10 +41,7 @@ class LocalPlayer(BaseModel):
 class EogStatsBlock(BaseModel):
     gameId: int
     localPlayer: LocalPlayer
-    # Each team is a list of Player objects.
-    # NOTE: the exact nesting field name may differ in the live LCU response.
-    # Verify with a real game and adjust if needed.
-    teams: list[list[Player]]
+    teams: list[Team]
 
 
 class ReportPayload(BaseModel):
