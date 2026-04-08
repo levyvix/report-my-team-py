@@ -1,0 +1,21 @@
+[project]
+name = "report-my-team-py"
+version = "0.1.0"
+description = "Automatically reports League of Legends players at end of game via LCU API"
+readme = "README.md"
+authors = [
+    { name = "Levy Nunes", email = "levy.vix@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.28.1",
+    "psutil>=7.2.2",
+    "pydantic>=2.12.5",
+]
+
+[project.scripts]
+report-my-team = "report_my_team.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
