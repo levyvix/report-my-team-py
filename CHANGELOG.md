@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.1](https://github.com/levyvix/report-my-team/compare/report-my-team-py-v1.1.0...report-my-team-py-v1.1.1) (2026-04-09)
+
+
+### Documentation
+
+* simplify README to focus on essential usage info ([d2bd1b0](https://github.com/levyvix/report-my-team/commit/d2bd1b0fa076af647e5cd409bdc90dd004e751cf))
+* update repo name references to remove -py suffix ([89159d6](https://github.com/levyvix/report-my-team/commit/89159d6b154910379952cafa82bddfe0b1901417))
+
 ## [1.1.0](https://github.com/levyvix/report-my-team-py/compare/report-my-team-py-v1.0.0...report-my-team-py-v1.1.0) (2026-04-08)
 
 
