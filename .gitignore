@@ -5,3 +5,4 @@ dist/
 build/
 *.spec
 .ruff_cache/
+.claude/
