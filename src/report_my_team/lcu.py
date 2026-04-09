@@ -108,9 +108,7 @@ class LcuClient:
         url = f"https://127.0.0.1:{self._credentials.port}/{path}"
         headers = {"Authorization": self._credentials.auth_header}
         try:
-            resp = await self._http.request(
-                method, url, headers=headers, json=json_body
-            )
+            resp = await self._http.request(method, url, headers=headers, json=json_body)
             return resp.status_code, resp.content
         except httpx.RequestError as exc:
             logger.debug("LCU request failed: %s", exc)

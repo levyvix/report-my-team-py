@@ -49,9 +49,7 @@ async def handle_end_game(client: LcuClient, state: AppState) -> None:
     logger.info("------------------")
 
 
-async def _report_player(
-    client: LcuClient, state: AppState, game_id: int, player: Player
-) -> None:
+async def _report_player(client: LcuClient, state: AppState, game_id: int, player: Player) -> None:
     name = player.riotIdGameName
     champ = player.championName or "Unknown"
 
@@ -60,9 +58,7 @@ async def _report_player(
         return
 
     if player.summonerId in state.friends_ids:
-        logger.info(
-            "Skipping %s (%s) — friend detected (ID %d)", name, champ, player.summonerId
-        )
+        logger.info("Skipping %s (%s) — friend detected (ID %d)", name, champ, player.summonerId)
         return
 
     logger.info("Reporting %s (%s, ID %d)...", name, champ, player.summonerId)

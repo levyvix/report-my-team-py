@@ -19,6 +19,9 @@ report-my-team = "report_my_team.__main__:main"
 [tool.hatch.build.targets.wheel]
 packages = ["src/report_my_team"]
 
+[tool.ruff]
+line-length = 120
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
