@@ -1,6 +1,6 @@
 [project]
 name = "report-my-team-py"
-version = "1.1.1"
+version = "1.2.0"
 description = "Automatically reports League of Legends players at end of game via LCU API"
 readme = "README.md"
 authors = [
