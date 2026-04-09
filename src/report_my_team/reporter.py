@@ -2,11 +2,15 @@ import asyncio
 import logging
 
 from report_my_team.lcu import LcuClient
-from report_my_team.models import REPORT_CATEGORIES, EogStatsBlock, Player, ReportPayload
+from report_my_team.models import (
+    REPORT_CATEGORIES,
+    EogStatsBlock,
+    Player,
+    ReportPayload,
+)
 from report_my_team.state import AppState
 
 logger = logging.getLogger(__name__)
-
 
 
 async def handle_end_game(client: LcuClient, state: AppState) -> None:
@@ -35,7 +39,9 @@ async def handle_end_game(client: LcuClient, state: AppState) -> None:
         for player in team.players:
             if player.botPlayer:
                 logger.info(
-                    "Skipping %s (%s) — bot player", player.riotIdGameName or player.championName, player.championName
+                    "Skipping %s (%s) — bot player",
+                    player.riotIdGameName or player.championName,
+                    player.championName,
                 )
             else:
                 report_tasks.append(_report_player(client, state, stats.gameId, player))
@@ -43,7 +49,9 @@ async def handle_end_game(client: LcuClient, state: AppState) -> None:
     logger.info("------------------")
 
 
-async def _report_player(client: LcuClient, state: AppState, game_id: int, player: Player) -> None:
+async def _report_player(
+    client: LcuClient, state: AppState, game_id: int, player: Player
+) -> None:
     name = player.riotIdGameName
     champ = player.championName or "Unknown"
 
@@ -52,7 +60,9 @@ async def _report_player(client: LcuClient, state: AppState, game_id: int, playe
         return
 
     if player.summonerId in state.friends_ids:
-        logger.info("Skipping %s (%s) — friend detected (ID %d)", name, champ, player.summonerId)
+        logger.info(
+            "Skipping %s (%s) — friend detected (ID %d)", name, champ, player.summonerId
+        )
         return
 
     logger.info("Reporting %s (%s, ID %d)...", name, champ, player.summonerId)
