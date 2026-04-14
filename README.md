@@ -19,3 +19,9 @@ git clone https://github.com/levyvix/report-my-team
 cd report-my-team
 uv run report-my-team
 ```
+
+## How it works
+
+Once a game ends, the tool automatically submits reports for all non-friend players. Here's what the feedback looks like:
+
+![Report Feedback](denunciado.png)
