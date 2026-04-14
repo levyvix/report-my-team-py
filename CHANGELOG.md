@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.1](https://github.com/levyvix/report-my-team/compare/report-my-team-v1.2.0...report-my-team-v1.2.1) (2026-04-14)
+
+
+### Documentation
+
+* add architecture and data flow details to CLAUDE.md ([c18a51c](https://github.com/levyvix/report-my-team/commit/c18a51c83d47501613941037086dbccb627fd6b6))
+* add report feedback screenshot to readme ([f297e91](https://github.com/levyvix/report-my-team/commit/f297e91e6d1aeebd656c40298724c43b91cda047))
+
 ## [1.2.0](https://github.com/levyvix/report-my-team/compare/report-my-team-v1.1.1...report-my-team-v1.2.0) (2026-04-09)
 
 
