@@ -1,10 +1,12 @@
 import asyncio
 import logging
 import sys
+import threading
 
 from report_my_team.game_monitor import monitor_client, monitor_phase
 from report_my_team.lcu import LcuClient
 from report_my_team.state import AppState
+from report_my_team.tray import run_tray
 
 
 def _configure_logging() -> None:
@@ -37,7 +39,9 @@ async def _main() -> None:
 
 
 def main() -> None:
-    asyncio.run(_main())
+    t = threading.Thread(target=asyncio.run, args=(_main(),), daemon=True)
+    t.start()
+    run_tray()
 
 
 if __name__ == "__main__":
